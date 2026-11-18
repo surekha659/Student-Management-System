@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Student</title>
+</head>
+
+<body>
+    <h2>Add New Student</h2>
+
+    <form action="/students/add" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter student name" required><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" placeholder="18-30" min="18" max="30" required><br>
+
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender" placeholder="Enter gender" required><br>
+
+        <label for="marks">Marks:</label>
+        <input type="number" id="marks" name="marks" placeholder="0-100" min="0" max="100" required><br>
+
+        <label for="course">Course:</label>
+        <input type="text" id="course" name="course" placeholder="Enter course" required><br>
+
+        <label for="image">Image URL:</label>
+        <input type="url" id="image" name="image" placeholder="https://example.com/photo.jpg"><br>
+
+        <label for="status">Attendance:</label>
+        <select id="status" name="status" required>
+            <option value="1">Present</option>
+            <option value="0" selected>Absent</option>
+        </select><br>
+
+        <button type="submit">Add Student</button>
+    </form>
+
+    <a href="/">Back to students</a>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+</head>
+
+<body>
+    <h1>Details page of student {{ std[1] }}</h1>
+
+    <div class="card">
+        {% if std[6] %}
+        <img src="{{ std[6] }}" alt="Photo of {{ std[1] }}" width="180" height="180">
+        {% endif %}
+
+        <h2>Name: {{ std[1] }}</h2>
+        <p>Age: {{ std[2] }}</p>
+        <p>Gender: {{ std[3] }}</p>
+        <p>Marks: {{ std[4] }}</p>
+        <p>Course: {{ std[5] }}</p>
+
+        {% if std[7] == 1 %}
+        <p>Attendance: Present</p>
+        {% else %}
+        <p>Attendance: Absent</p>
+        {% endif %}
+    </div>
+
+    <a href="/students/edit/{{ std[0] }}">Update Student</a>
+
+    <form action="/students/{{ std[0] }}/delete" method="post">
+        <button type="submit">Delete Student</button>
+    </form>
+
+    <a href="/">Back to students</a>
+</body>
+
+</html>
